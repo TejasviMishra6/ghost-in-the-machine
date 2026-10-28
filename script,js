@@ -1,0 +1,96 @@
+
+const form = document.getElementById("command-form");
+const input = document.getElementById("command");
+const output = document.getElementById("output");
+const ghost = document.getElementById("ghost");
+const ghostMessage = document.getElementById("ghost-message");
+
+const stories = [
+  "At 3:03 AM, the computer turned on by itself. A message appeared: 'I remember you.'",
+  "The developer deleted every file. At midnight, a new folder appeared: DO_NOT_OPEN.",
+  "An old program ran for the first time in 20 years. Its first output was: 'You're finally back.'",
+  "The screen went black. Then a cursor typed: 'There is someone behind you.'"
+];
+
+function printLine(text, className = "") {
+  const line = document.createElement("p");
+  line.textContent = text;
+  if (className) line.className = className;
+  output.appendChild(line);
+  output.scrollTop = output.scrollHeight;
+}
+
+function reply(message) {
+  ghostMessage.textContent = message;
+  ghost.classList.remove("glitch");
+  void ghost.offsetWidth;
+  ghost.classList.add("glitch");
+}
+
+function runCommand(raw) {
+  const command = raw.trim().toLowerCase();
+  if (!command) return;
+
+  printLine("visitor@void:~$ " + raw, "user-line");
+
+  switch (command) {
+    case "help":
+      printLine("AVAILABLE COMMANDS:", "system");
+      printLine("summon  - Contact the ghost");
+      printLine("story   - Generate a spooky story");
+      printLine("scan    - Scan the fictional system");
+      printLine("time    - Check the local clock");
+      printLine("clear   - Clear the terminal");
+      printLine("help    - List commands");
+      reply("You have opened the forbidden manual.");
+      break;
+
+    case "summon":
+      printLine("[ENTITY] Connection established...");
+      printLine("[GHOST] Who has disturbed my sleep?");
+      reply("You called. Now ask your question...");
+      break;
+
+    case "story": {
+      const story = stories[Math.floor(Math.random() * stories.length)];
+      printLine("[NIGHTMARE] " + story);
+      reply("Every story leaves something behind.");
+      break;
+    }
+
+    case "scan":
+      printLine("[SCAN] Checking imaginary system files...");
+      printLine("[WARNING] Unknown entity detected in sector 7.");
+      printLine("[RESULT] Just a spooky simulation. No real files scanned.");
+      reply("I can see... absolutely nothing. Probably.");
+      break;
+
+    case "time":
+      printLine("[CLOCK] " + new Date().toLocaleString());
+      reply("Time moves differently in here.");
+      break;
+
+    case "clear":
+      output.replaceChildren();
+      reply("Why did you erase our conversation?");
+      return;
+
+    default:
+      printLine("[GHOST] I don't understand that command. Type help.", "error");
+      reply("Speak clearly, human...");
+  }
+}
+
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  runCommand(input.value);
+  input.value = "";
+  input.focus();
+});
+
+document.querySelectorAll("[data-command]").forEach((button) => {
+  button.addEventListener("click", () => {
+    runCommand(button.dataset.command);
+    input.focus();
+  });
+});

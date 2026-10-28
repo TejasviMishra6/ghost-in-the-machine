@@ -1,0 +1,79 @@
+# 👻 GHOST.exe — Ghost in the Machine
+
+> A spooky, interactive haunted terminal built with HTML, CSS, and JavaScript.
+
+What if your terminal could talk back?  
+**GHOST.exe** is a Halloween-inspired web project where users can interact with a mysterious digital ghost, explore spooky commands, and generate random horror stories.
+
+## ✨ Features
+
+- 👻 Interactive ghost character with animated effects
+- 💻 Retro hacker-style terminal interface
+- 🔮 Commands like `summon`, `story`, `scan`, `time`, and `help`
+- 📖 Randomly generated spooky stories from predefined prompts
+- ⚡ Glitch animations and neon-green visuals
+- 📱 Responsive design for desktop and mobile
+- 🔌 Runs locally in your browser without a backend
+
+## 🛠️ Tech Stack
+
+- **HTML5** — Project structure
+- **CSS3** — Styling, animations, and responsive layout
+- **JavaScript** — Terminal commands and interactions
+
+## 🚀 Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone YOUR_REPOSITORY_URL
+```
+
+Replace `YOUR_REPOSITORY_URL` with your actual GitHub repository URL.
+
+### 2. Open the project
+
+Navigate to the project folder and open `index.html` in your browser.
+
+Alternatively, use the Live Server extension in Visual Studio Code.
+
+### 3. Try the commands
+
+| Command | Description |
+|---|---|
+| `help` | Displays available commands |
+| `summon` | Contacts the fictional ghost |
+| `story` | Displays a random horror story |
+| `scan` | Runs a simulated system scan |
+| `time` | Displays the current date and time |
+| `clear` | Clears the terminal output |
+
+## 🔓 Why Open Innovation Matters
+
+This project explores how creative applications can run locally and remain accessible without depending on a hosted AI service.
+
+The current version uses client-side JavaScript and predefined responses. It does **not** yet run an AI model.
+
+A future version could integrate an open-weight language model through Ollama to generate original ghostly responses locally, improving privacy and giving developers more control over model selection and behavior.
+
+## 🗺️ Future Improvements
+
+- [ ] Integrate an open-weight AI model using Ollama
+- [ ] Add dynamic AI-generated horror stories
+- [ ] Add optional sound effects
+- [ ] Introduce more interactive terminal commands
+- [ ] Improve offline functionality and accessibility
+
+## 🎃 Theme
+
+Created for **Ghost in the Machine** — a celebration of spooky creativity, open innovation, and the mysterious side of technology.
+
+## 📜 License
+
+This project is open for exploration and modification. Add an appropriate open-source license, such as the MIT License, before formally distributing it under that license.
+
+---
+
+**The machine never sleeps. The ghost is waiting.** 👁️
+
+Made with curiosity and a little bit of code.

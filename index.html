@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ghost in the Machine</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="stars" id="stars"></div>
+
+  <main class="terminal">
+    <header>
+      <div class="status">
+        <span class="dot"></span>
+        ENTITY DETECTED
+      </div>
+      <h1>GHOST<span>.exe</span></h1>
+      <p class="subtitle">A signal from the other side of the machine.</p>
+    </header>
+
+    <section class="ghost-area">
+      <div class="ghost" id="ghost">👻</div>
+      <p id="ghost-message">I have been waiting for you...</p>
+    </section>
+
+    <section class="screen" aria-label="Terminal output">
+      <div class="screen-head">
+        <span>root@unknown:~</span>
+        <span>LOCAL SESSION</span>
+      </div>
+      <div id="output" aria-live="polite">
+        <p class="system">[SYSTEM] Connection established.</p>
+        <p>[GHOST] You shouldn't have opened this.</p>
+        <p class="system">Type <b>help</b> to discover the commands.</p>
+      </div>
+    </section>
+
+    <form id="command-form">
+      <label for="command">visitor@void:~$</label>
+      <input id="command" autocomplete="off"
+        placeholder="Type a command..." autofocus>
+      <button type="submit">RUN ↵</button>
+    </form>
+
+    <div class="quick-actions">
+      <button data-command="summon">Summon ghost</button>
+      <button data-command="story">Tell a story</button>
+      <button data-command="scan">Scan system</button>
+      <button data-command="help">Help</button>
+    </div>
+
+    <footer>
+      <span>◉ LOCAL DEMO MODE</span>
+      <span>THE MACHINE NEVER SLEEPS</span>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
